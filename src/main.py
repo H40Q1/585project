@@ -21,7 +21,7 @@ def main():
 
     style_weight = 1e8
 
-    style_path = "../Style"
+    style_path = "../style"
     content_path = "../content"
 
     styleDir = [f for f in listdir(style_path) if isfile(join(style_path, f))]
@@ -41,7 +41,7 @@ def main():
                                         style_layers=style_layers_selected, device)
 
 
-            path = '../Results/img_' + str(image_no) + '.jpg'
+            path = '../results/img_' + str(image_no) + '.jpg'
             output.save(path, 'JPEG')
             image_no += 1
 
