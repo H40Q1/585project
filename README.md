@@ -34,6 +34,7 @@ In our project implementation, we use pytorch to perform a series of deep learni
 <img src ="img/img7.png">
 - (e) Finally we have a cathedral glass painting with a knight's face on it. The results of style image(e) have the sharpest and clearest face edges. This is because the style image has clear lines that outline the face in the middle of the painting and the color of the face in the painting is very close to the face color in the content images. Therefore we can see that there are glass patterns in the main area of the faces and bright face contours in the output images.  
 <img src ="img/img8.png">
+
 ## Quantitative and Qualitative Evaluation
 
 ### Qualitative Evaluation
