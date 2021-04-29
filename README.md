@@ -3,9 +3,12 @@
 ## Introduction
 The goal of our project is to perform style transformation on paintings with different artistic styles. We found the generating process from reading the paper “Texture Synthesis Using Convolutional Neural Networks” that provides many examples and theoretical fundamentals for us to build a model. The evaluation criterion for the quality of the synthesised texture is usually human inspection, which we applied both qualitative and quantitative evaluation at the end of our project. In general, the whole process is to find two images, a content image and a style image, collect their content element and style element separately and reconstruct a new image and this image has the content with the typical style shown in the picture.   
 In our work we tested more than 5 different styles and their impact on different faces. Also we tried different values of key parameters that could influence the performance of our convolutional neural network. In the end we analyzed a series of elements that consist of our qualitative and quantitative evaluation. Due to the time and equipment shortage, we left some problems unsolved and moved them to further study.  
+<img src="img/img1.png">
 
 ## Implementation
 In our project implementation, we use pytorch to perform a series of deep learning algorithms sto take an image and reproduce a new image with a given artistic style.  There are also other libraries, such as tensorflow , also allows us to construct a model that resembles the content and the artistic style of two individual images. Running a neural style transfer model usually takes a long time to train and requires gpu to speed up. We use the function “torch.cuda_is_available” to detect if there is a GPU available. In our project, we need a content image and a style image to reproduce a new image. Therefore the training process does not take too long and we could still perform this task without the support of GPU.
+
+<img src="img/img2.png">
 
 - When loading the image, we have to assign the size of the loading image. Although we could resize the image to guarantee content images have the same size with style images. We still try to set the resolution higher to show them with higher quality.We also rate a function to see how this process works. This function “imshow” shows the content image and the style image.
 
@@ -17,6 +20,8 @@ In our project implementation, we use pytorch to perform a series of deep learni
 
 - Then we have to implement our model by using the 19 layer VGG network. All pre-trained models expect input images normalized in the same way.
 
+<img src="img/img3.png">
+
 - Then we need to get the representation of content loss and style loss by implementing VGG 19 and setting it to evaluation mode. Before sending the data into the pre-trained network, This data needs to be normalized with means =[0.485, 0.456, 0.406] and standard deviation = [0.229, 0.224, 0.225] which are given in the code. VGG 19 also contains a series of child modules and we can use the sequential module to make sure the content loss layer and style loss layer are correctly asserted in the network.
 
 - In order to minimize the content loss and style loss, we apply the algorithm to run gradient descent and pass our input image to optimize. By using the function “backward”, we compute the gradient of each module dynamically and update the new losses. We jointly minimise the distance of the feature representations of an initial image from the content representation of the photograph in one layer and the style representation of the painting defined on a number of layers of the CNN.
@@ -24,11 +29,15 @@ In our project implementation, we use pytorch to perform a series of deep learni
 ## Result
 
 - (a) We have perfect results on abstract paint with color blocks. The colors in the style images are equally blended into content images and in the output images, we have clear and sharp contour of human faces and we can recognize who they are by only looking at the output image. The output images consist of lines and color blocks because the style images are full of color blocks and short lines, which shows that the style transfer of abstract paint with color blocks is very successful.
-
+<img src="img/img4.png">
 - (b) We also have satisfying results when using a painting called ”TedHarrison” with small color rectangles as style images. If you randomly take one image from the five output images, we can see that the whole image color distribution is very similar to the color distribution of the style image. The edge of human faces are very clear and easy to recognize. They are even sharper than the results using abstract paintings with color blocks. This is because the style image (b) has a sharper edge and this property is reflected in the final output images.
+<img src="img/img5.png">
 - (c) We also try paintings with water colors and the result shows a very “water-color” style result, which means that our style transfer algorithm does well on water-color paintings. We find a very distinctive style in output images that they have many horizontal curves among the images and the color distribution is very soft. These features show a clear water-color style and the face contours are clear and easy to recognize.
+<img src="img/img6.png">
 - (d) We have tested Mosaic style paintings  as style images. From the results we find out that the image quality is not so good which we can see some noise and short colored lines inside the image, especially on human faces. The noises make the output images look a bit messy and dirty in its color distribution. However, we can see a clear and sharp edge of human faces. This is because the style image has a bright color style and it matches perfectly with human faces.
+<img src="img/img7.png">
 - (e) Finally we have a cathedral glass painting with a knight's face on it. The results of style image(e) have the sharpest and clearest face edges. This is because the style image has clear lines that outline the face in the middle of the painting and the color of the face in the painting is very close to the face color in the content images. Therefore we can see that there are glass patterns in the main area of the faces and bright face contours in the output images.  
+<img src="img/img8.png">
 
 ## Quantitative and Qualitative Evaluation
 
