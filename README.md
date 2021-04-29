@@ -57,21 +57,15 @@ REQUIREMENTS MODULES
 
 This module requires the following modules:
 
- * Pandas (https://pandas.pydata.org/)
  * Numpy (https://numpy.org/)
  * Matplotlib (https://matplotlib.org/)
  * PyTorch (https://pytorch.org/)
- * Sklearn (https://scikit-learn.org/stable/)
- 
- 
+
  
 INSTALLATION
 ------------
 Install as you would normally install modules
- * Pandas
- ```
- $ pip install pandas
-   ```
+
  * Numpy 
   ```
  $ pip install numpy
@@ -95,17 +89,18 @@ FILES DESCRIPTION
  * Style: folder of style images
  
  Files
- * data_overview: data information, descriptions and plots
- * main: main file with Data class and Config class
- * model: model file with Net class, train, predict and evaluate methods
- * arima: ARIMA model for stocks prediction (for comparison)
+ * data_loader: preprocess and load images
+ * loss: define loss function
+ * normalization: normalize images
+ * content_presentation: construct layer into the network
+ * run_style_transfer: run the network
+ * main: main file
  
 USAGE
 ------------
 
  ```
-python main.py 
-               
+python3 main.py         
 ```
 
    
