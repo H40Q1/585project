@@ -60,6 +60,7 @@ This module requires the following modules:
  * Numpy (https://numpy.org/)
  * Matplotlib (https://matplotlib.org/)
  * PyTorch (https://pytorch.org/)
+ * PIL (https://pillow.readthedocs.io/en/stable/)
 
  
 Installation
@@ -78,6 +79,12 @@ $ python -m pip install .
   ```
  $ pip install torch
    ```
+  * PIL
+  ```
+ $ pip install pillow
+   ```
+  
+ 
 
  
 Files Description
