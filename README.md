@@ -106,6 +106,7 @@ Files Description
  * content_presentation: construct layer into the network
  * run_style_transfer: run the network
  * main: main file
+ * project: jupyter notebook of running example
  
 Usage
 ------------
