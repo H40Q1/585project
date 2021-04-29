@@ -52,3 +52,68 @@ In our project implementation, we use pytorch to perform a series of deep learni
 - Also due to the restriction of SCC, we use the pretrained network VGG-19 as our neural style transfer network. If we have more time on data collecting, we could choose a larger and more comprehensive neural network. We need to test many parameters of a new neural network and this requires plenty of time. We are very interested in this topic because we are happy to blend different images and manipulate them into different styles. Now we have the fundamental frame of the whole algorithm and we have tested many compositions of the key parameters,  I think we will have better results in the further studies. 
 
 
+REQUIREMENTS MODULES
+------------
+
+This module requires the following modules:
+
+ * Pandas (https://pandas.pydata.org/)
+ * Numpy (https://numpy.org/)
+ * Matplotlib (https://matplotlib.org/)
+ * PyTorch (https://pytorch.org/)
+ * Sklearn (https://scikit-learn.org/stable/)
+ 
+ 
+ 
+INSTALLATION
+------------
+Install as you would normally install modules
+ * Pandas
+ ```
+ $ pip install pandas
+   ```
+ * Numpy 
+  ```
+ $ pip install numpy
+   ```
+ * Matplotlib: install from source (recommended)
+  ```
+$ python -m pip install .
+   ```
+ * PyTorch 
+  ```
+ $ pip install torch
+   ```
+
+ 
+FILES DESCRIPTION
+------------
+ Folders
+ * Src: folder of implemented code
+ * Results: folder of output images
+ * Content: folder of content images
+ * Style: folder of style images
+ 
+ Files
+ * data_overview: data information, descriptions and plots
+ * main: main file with Data class and Config class
+ * model: model file with Net class, train, predict and evaluate methods
+ * arima: ARIMA model for stocks prediction (for comparison)
+ 
+USAGE
+------------
+
+ ```
+python main.py 
+               
+```
+
+   
+
+MAINTAINERS
+-----------
+Current maintainers:
+ * Haoqi Gu - haoqigu@bu.edu
+ * Zhichao Lu - zhichaol@bu.edu
+ * Chenhui Zhu - zhuch@bu.edu
+ 
